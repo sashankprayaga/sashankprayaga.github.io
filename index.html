@@ -26,18 +26,34 @@
             color: #1f2937; /* Darker gray for headings */
         }
         .section-title {
-            border-bottom: 2px solid #e5e7eb; /* Light gray border */
+            border-bottom: 2px solid #a7d9f7; /* Light blue border */
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            color: #2563eb; /* Blue color for section titles */
         }
-        .experience-item, .project-item {
+        .section-title i {
+            margin-right: 0.75rem;
+            color: #2563eb; /* Blue color for icons in titles */
+        }
+        .experience-item, .project-item, .education-item {
             margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #fcfcfc; /* Slightly off-white for item backgrounds */
+            border-radius: 0.5rem;
+            border: 1px solid #e0e7ff; /* Light blue border for items */
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         }
-        .experience-item:last-child, .project-item:last-child {
+        .experience-item:last-child, .project-item:last-child, .education-item:last-child {
             margin-bottom: 0;
         }
         .skill-category {
             margin-bottom: 1rem;
+            padding: 0.75rem;
+            background-color: #eef2ff; /* Very light blue for skill categories */
+            border-radius: 0.5rem;
+            border: 1px solid #c7d2fe;
         }
         .skill-category:last-child {
             margin-bottom: 0;
@@ -47,7 +63,23 @@
             transition: color 0.2s ease-in-out;
         }
         .icon-link:hover {
-            color: #1f2937; /* Darker gray on hover */
+            color: #2563eb; /* Blue on hover for social icons */
+        }
+        .sub-heading {
+            font-weight: 600; /* Semi-bold */
+            margin-top: 0.75rem;
+            margin-bottom: 0.5rem;
+            color: #374151;
+            display: flex;
+            align-items: center;
+        }
+        .sub-heading i {
+            margin-right: 0.5rem;
+            color: #2563eb; /* Blue for sub-heading icons */
+        }
+        .list-item-icon {
+            color: #2563eb; /* Blue for list item icons */
+            margin-right: 0.5rem;
         }
     </style>
 </head>
@@ -57,7 +89,9 @@
         <header class="text-center mb-8">
             <h1 class="text-4xl font-bold mb-2">SASHANK PRAYAGA</h1>
             <p class="text-lg text-gray-600 mb-4">
-                +4917660600047 | sashankprayaga93@gmail.com | Hilden, Germany
+                <span class="inline-flex items-center mr-4"><i class="fas fa-phone-alt text-blue-500 mr-1"></i>+4917660600047</span>
+                <span class="inline-flex items-center mr-4"><i class="fas fa-envelope text-blue-500 mr-1"></i>sashankprayaga93@gmail.com</span>
+                <span class="inline-flex items-center"><i class="fas fa-map-marker-alt text-blue-500 mr-1"></i>Hilden, Germany</span>
             </p>
             <div class="flex justify-center space-x-4">
                 <a href="https://www.linkedin.com/in/sashank-prayaga-740a36107/" target="_blank" rel="noopener noreferrer" class="icon-link">
@@ -71,7 +105,7 @@
 
         <!-- Professional Summary Section -->
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold section-title">PROFESSIONAL SUMMARY</h2>
+            <h2 class="text-2xl font-semibold section-title"><i class="fas fa-user-tie"></i>PROFESSIONAL SUMMARY</h2>
             <p class="text-gray-700 leading-relaxed">
                 Results-driven Data Engineer with over 4 years of experience in building scalable data pipelines, cloud infrastructure, and machine learning solutions. Skilled in designing and automating end-to-end ETL workflows using Apache Airflow and AWS (Redshift, Lambda, RDS). Proven ability to collaborate cross-functionally with data scientists and process engineers to deliver impactful tools such as anomaly detection models, recommendation systems, and interactive dashboards using Power BI and QuickSight. Adept at deploying ML models with FastAPI, Streamlit, and MLflow. Passionate about creating reusable infrastructure and enabling data-driven decision-making in production and business environments.
             </p>
@@ -79,121 +113,152 @@
 
         <!-- Experience Section -->
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold section-title">EXPERIENCE</h2>
+            <h2 class="text-2xl font-semibold section-title"><i class="fas fa-briefcase"></i>EXPERIENCE</h2>
 
             <div class="experience-item">
-                <h3 class="text-xl font-semibold">Data Engineer</h3>
-                <p class="text-gray-700">Yara International | Berlin, Germany</p>
-                <p class="text-gray-600 text-sm mb-2">Jun 2022 - Present</p>
-                <ul class="list-disc list-inside text-gray-700 space-y-1">
-                    <li>Designed and implemented an AWS data pipeline using Glue ETL, PySpark, Redshift Spectrum, and CI/CD practices, reducing data processing time by 30% for Data Lake and Data Modeling workflows.</li>
-                    <li>Managed and optimized cloud-based ML infrastructure with AWS CloudFormation, Amazon ECS, and CI/CD pipelines, reducing cloud costs by 20% while ensuring high system uptime and performance.</li>
-                    <li>Built interactive dashboards using Amazon QuickSight and Power BI, enabling stakeholders to derive actionable insights from cleansed, unified datasets.</li>
-                    <li>Ensured high data quality and pipeline reliability by implementing validation checks and performance optimizations, resulting in a 20% improvement in processing efficiency.</li>
-                    <li>Extracted production data from APIs and developed Python-based algorithms to identify optimal production conditions, enhancing throughput and product quality.</li>
-                    <li>Designed and implemented reusable AWS infrastructure templates (using CloudFormation) to support data science workflows, enabling faster and standardized project deployment.</li>
-                    <li>Collaborated with data scientists to build a shared cloud-based infrastructure, streamlining model development, testing, and deployment across multiple projects with improved scalability and consistency.</li>
+                <h3 class="text-xl font-semibold text-blue-700">Data Engineer</h3>
+                <p class="text-gray-700 flex items-center mb-1">
+                    <span class="mr-2 text-blue-500">📍</span>Yara International | Berlin, Germany
+                </p>
+                <p class="text-gray-600 text-sm flex items-center mb-2">
+                    <span class="mr-2 text-blue-500">🗓️</span>Jun 2022 – Present
+                </p>
+                <div class="sub-heading"><i class="fas fa-rocket"></i>Technical Accomplishments</div>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 ml-6">
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Designed and deployed AWS-based ETL pipelines using Glue ETL, PySpark, and Redshift Spectrum, reducing data processing time by 30%.</li>
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Managed ML workloads using ECS, CloudFormation, and CI/CD, optimizing reliability and scalability.</li>
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Implemented automated validation checks and pipeline performance tuning, improving data throughput by 20%.</li>
+                </ul>
+                <div class="sub-heading"><i class="fas fa-chart-bar"></i>Business Impact</div>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 ml-6">
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Built dashboards in QuickSight and Power BI that provided unified insights to stakeholders and reduced reporting time.</li>
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Developed production optimization algorithms that enhanced throughput and product quality across facilities.</li>
+                </ul>
+                <div class="sub-heading"><i class="fas fa-handshake"></i>Collaboration</div>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 ml-6">
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Partnered with data scientists to develop reusable infrastructure templates for faster deployment.</li>
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Supported multiple ML projects by maintaining shared infrastructure and standardizing workflows.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
-                <h3 class="text-xl font-semibold">Intern - Data Scientist</h3>
-                <p class="text-gray-700">Bosch Rexroth | Homburg (Saar), Germany</p>
-                <p class="text-gray-600 text-sm mb-2">Jul 2020 - Jan 2021</p>
-                <ul class="list-disc list-inside text-gray-700 space-y-1">
-                    <li>Developed and deployed machine learning models using sensor data to detect heat and mass flow anomalies with 95% accuracy, contributing to predictive maintenance efforts.</li>
-                    <li>Performed exploratory data analysis (EDA) with Plotly and Seaborn, uncovering key operational parameters that impacted system efficiency and performance.</li>
-                    <li>Improved model performance by 20% through hyperparameter tuning with Optuna, enhancing the reliability and precision of anomaly detection models.</li>
+                <h3 class="text-xl font-semibold text-blue-700">Intern - Data Scientist</h3>
+                <p class="text-gray-700 flex items-center mb-1">
+                    <span class="mr-2 text-blue-500">📍</span>Bosch Rexroth | Homburg (Saar), Germany
+                </p>
+                <p class="text-gray-600 text-sm flex items-center mb-2">
+                    <span class="mr-2 text-blue-500">🗓️</span>Jul 2020 - Jan 2021
+                </p>
+                <div class="sub-heading"><i class="fas fa-star"></i>Key Achievements</div>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 ml-6">
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Developed and deployed machine learning models using sensor data to detect heat and mass flow anomalies with 95% accuracy, contributing to predictive maintenance efforts.</li>
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Performed exploratory data analysis (EDA) with Plotly and Seaborn, uncovering key operational parameters that impacted system efficiency and performance.</li>
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Improved model performance by 20% through hyperparameter tuning with Optuna, enhancing the reliability and precision of anomaly detection models.</li>
                 </ul>
             </div>
 
             <div class="experience-item">
-                <h3 class="text-xl font-semibold">Data Analyst - Last Mile Delivery</h3>
-                <p class="text-gray-700">Amazon Development Centre | Hyderabad, India</p>
-                <p class="text-gray-600 text-sm mb-2">Sep 2016 - Jun 2017</p>
-                <ul class="list-disc list-inside text-gray-700 space-y-1">
-                    <li>Optimized last-mile logistics for Amazon North America, improving delivery efficiency by 15%.</li>
-                    <li>Played a key role in testing a new delivery solution that achieved a 98% success rate.</li>
+                <h3 class="text-xl font-semibold text-blue-700">Data Analyst - Last Mile Delivery</h3>
+                <p class="text-gray-700 flex items-center mb-1">
+                    <span class="mr-2 text-blue-500">📍</span>Amazon Development Centre | Hyderabad, India
+                </p>
+                <p class="text-gray-600 text-sm flex items-center mb-2">
+                    <span class="mr-2 text-blue-500">🗓️</span>Sep 2016 - Jun 2017
+                </p>
+                <div class="sub-heading"><i class="fas fa-star"></i>Key Achievements</div>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 ml-6">
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Optimized last-mile logistics for Amazon North America, improving delivery efficiency by 15%.</li>
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Played a key role in testing a new delivery solution that achieved a 98% success rate.</li>
                 </ul>
             </div>
         </section>
 
         <!-- Education Section -->
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold section-title">EDUCATION</h2>
-            <div class="mb-4">
-                <h3 class="text-xl font-semibold">M.Sc. in Commercial Vehicle Technology</h3>
-                <p class="text-gray-700">TU Kaiserslautern | Kaiserslautern, Germany</p>
-                <p class="text-gray-600 text-sm">Apr 2022</p>
+            <h2 class="text-2xl font-semibold section-title"><i class="fas fa-graduation-cap"></i>EDUCATION</h2>
+            <div class="education-item">
+                <h3 class="text-xl font-semibold text-blue-700">M.Sc. in Commercial Vehicle Technology</h3>
+                <p class="text-gray-700 flex items-center mb-1">
+                    <span class="mr-2 text-blue-500">🏫</span>TU Kaiserslautern | Kaiserslautern, Germany
+                </p>
+                <p class="text-gray-600 text-sm flex items-center">
+                    <span class="mr-2 text-blue-500">🗓️</span>Apr 2022
+                </p>
             </div>
-            <div>
-                <h3 class="text-xl font-semibold">B.Tech in Mechanical Engineering</h3>
-                <p class="text-gray-700">ICFAI Foundation for Higher Education | Hyderabad, India</p>
-                <p class="text-gray-600 text-sm">Jul 2016</p>
+            <div class="education-item">
+                <h3 class="text-xl font-semibold text-blue-700">B.Tech in Mechanical Engineering</h3>
+                <p class="text-gray-700 flex items-center mb-1">
+                    <span class="mr-2 text-blue-500">🏫</span>ICFAI Foundation for Higher Education | Hyderabad, India
+                </p>
+                <p class="text-gray-600 text-sm flex items-center">
+                    <span class="mr-2 text-blue-500">🗓️</span>Jul 2016
+                </p>
             </div>
         </section>
 
         <!-- Projects Section -->
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold section-title">PROJECTS</h2>
+            <h2 class="text-2xl font-semibold section-title"><i class="fas fa-lightbulb"></i>PROJECTS</h2>
 
             <div class="project-item">
-                <h3 class="text-xl font-semibold">Master Thesis - Defect Detection in Automated Rail-Guided Vehicles Using Machine Learning</h3>
-                <ul class="list-disc list-inside text-gray-700 space-y-1">
-                    <li>Collected and preprocessed sensor data from unmanned rail-guided vehicles operating in warehouse environments, focusing on detecting 8 distinct mechanical defects.</li>
-                    <li>Augmented limited defect data by replicating fault conditions, improving model robustness and training data balance.</li>
-                    <li>Engineered features using sliding windows, TSFEL, and Featuretools, and trained multiple ML algorithms to identify defect patterns, achieving 90% accuracy with the best-performing model.</li>
-                    <li>Deployed the final model using FastAPI and Streamlit, and implemented MLflow to track experiments, version models, and monitor performance in real-time.</li>
+                <h3 class="text-xl font-semibold text-blue-700">Master Thesis - Defect Detection in Automated Rail-Guided Vehicles Using Machine Learning</h3>
+                <div class="sub-heading"><i class="fas fa-cogs"></i>Project Details</div>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 ml-6">
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Collected and preprocessed sensor data from unmanned rail-guided vehicles operating in warehouse environments, focusing on detecting 8 distinct mechanical defects.</li>
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Augmented limited defect data by replicating fault conditions, improving model robustness and training data balance.</li>
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Engineered features using sliding windows, TSFEL, and Featuretools, and trained multiple ML algorithms to identify defect patterns, achieving 90% accuracy with the best-performing model.</li>
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Deployed the final model using FastAPI and Streamlit, and implemented MLflow to track experiments, version models, and monitor performance in real-time.</li>
                 </ul>
             </div>
 
             <div class="project-item">
-                <h3 class="text-xl font-semibold">Intelligent Drive Mode Selection Using ML in Mild Hybrid Powertrains</h3>
-                <ul class="list-disc list-inside text-gray-700 space-y-1">
-                    <li>Collaborated in a team of two to develop a machine learning model for optimizing the controller in a mild hybrid vehicle, intelligently switching between battery-only, engine-only, and hybrid modes based on parameters like speed, RPM, and engine load.</li>
-                    <li>Designed the solution to maximize fuel efficiency by predicting optimal drive modes using historical driving data and vehicle telemetry.</li>
+                <h3 class="text-xl font-semibold text-blue-700">Intelligent Drive Mode Selection Using ML in Mild Hybrid Powertrains</h3>
+                <div class="sub-heading"><i class="fas fa-cogs"></i>Project Details</div>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 ml-6">
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Collaborated in a team of two to develop a machine learning model for optimizing the controller in a mild hybrid vehicle, intelligently switching between battery-only, engine-only, and hybrid modes based on parameters like speed, RPM, and engine load.</li>
+                    <li><i class="list-item-icon fas fa-check-circle"></i>Designed the solution to maximize fuel efficiency by predicting optimal drive modes using historical driving data and vehicle telemetry.</li>
                 </ul>
             </div>
         </section>
 
         <!-- Skills Section -->
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold section-title">SKILLS</h2>
+            <h2 class="text-2xl font-semibold section-title"><i class="fas fa-tools"></i>SKILLS</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div class="skill-category">
-                    <h3 class="text-lg font-medium">Programming</h3>
+                    <h3 class="text-lg font-medium flex items-center"><i class="list-item-icon fas fa-code"></i>Programming</h3>
                     <p class="text-gray-700">Python, SQL, R, C++</p>
                 </div>
                 <div class="skill-category">
-                    <h3 class="text-lg font-medium">Data Engineering</h3>
+                    <h3 class="text-lg font-medium flex items-center"><i class="list-item-icon fas fa-database"></i>Data Engineering</h3>
                     <p class="text-gray-700">Apache Airflow, Apache Spark, Apache Kafka, ETL, ELT</p>
                 </div>
                 <div class="skill-category">
-                    <h3 class="text-lg font-medium">Cloud</h3>
+                    <h3 class="text-lg font-medium flex items-center"><i class="list-item-icon fas fa-cloud"></i>Cloud</h3>
                     <p class="text-gray-700">AWS (Redshift, RDS, Lambda, S3, EC2, CloudFormation)</p>
                 </div>
                 <div class="skill-category">
-                    <h3 class="text-lg font-medium">Machine Learning & Deployment</h3>
+                    <h3 class="text-lg font-medium flex items-center"><i class="list-item-icon fas fa-brain"></i>Machine Learning & Deployment</h3>
                     <p class="text-gray-700">Supervised and Unsupervised Learning, Anomaly Detection, Model Deployment with FastAPI, Streamlit, MLflow, CI/CD with Git</p>
                 </div>
                 <div class="skill-category">
-                    <h3 class="text-lg font-medium">Databases</h3>
+                    <h3 class="text-lg font-medium flex items-center"><i class="list-item-icon fas fa-server"></i>Databases</h3>
                     <p class="text-gray-700">Datawarehouse (Amazon Redshift, Snowflake), NoSQL (DynamoDB), Relational Databases (Postgres, Amazon RDS), Datalake (Amazon S3)</p>
                 </div>
                 <div class="skill-category">
-                    <h3 class="text-lg font-medium">Visualization</h3>
+                    <h3 class="text-lg font-medium flex items-center"><i class="list-item-icon fas fa-chart-line"></i>Visualization</h3>
                     <p class="text-gray-700">Power BI, Amazon QuickSight, Plotly, Seaborn</p>
                 </div>
                 <div class="skill-category">
-                    <h3 class="text-lg font-medium">Infrastructure</h3>
+                    <h3 class="text-lg font-medium flex items-center"><i class="list-item-icon fas fa-building"></i>Infrastructure</h3>
                     <p class="text-gray-700">Infrastructure as Code (CloudFormation), Reusable AWS Templates, Containerization (Docker), CI/CD Pipelines</p>
                 </div>
                 <div class="skill-category">
-                    <h3 class="text-lg font-medium">Tools</h3>
+                    <h3 class="text-lg font-medium flex items-center"><i class="list-item-icon fas fa-toolbox"></i>Tools</h3>
                     <p class="text-gray-700">Jira, Confluence, Microsoft Office Suite (Excel, PowerPoint, Word)</p>
                 </div>
                 <div class="skill-category">
-                    <h3 class="text-lg font-medium">Soft Skills</h3>
+                    <h3 class="text-lg font-medium flex items-center"><i class="list-item-icon fas fa-comments"></i>Soft Skills</h3>
                     <p class="text-gray-700">Cross-functional Collaboration, Problem Solving, Communication, Attention to Detail</p>
                 </div>
             </div>
@@ -201,13 +266,13 @@
 
         <!-- Professional Development Section -->
         <section class="mb-8">
-            <h2 class="text-2xl font-semibold section-title">PROFESSIONAL DEVELOPMENT</h2>
+            <h2 class="text-2xl font-semibold section-title"><i class="fas fa-certificate"></i>PROFESSIONAL DEVELOPMENT</h2>
             <ul class="list-disc list-inside text-gray-700 space-y-1">
-                <li>AWS Certified AI Practitioner, Amazon Web Services (AWS)</li>
-                <li>Apache Airflow 3 Fundamentals, Astronomer</li>
-                <li>dbt Fundamentals, dbt learn</li>
-                <li>Google Data Analytics - Professional Certificate, Google (Coursera)</li>
-                <li>Microsoft Azure Data Fundamentals, Microsoft (Coursera)</li>
+                <li><i class="list-item-icon fas fa-award"></i>AWS Certified AI Practitioner, Amazon Web Services (AWS)</li>
+                <li><i class="list-item-icon fas fa-award"></i>Apache Airflow 3 Fundamentals, Astronomer</li>
+                <li><i class="list-item-icon fas fa-award"></i>dbt Fundamentals, dbt learn</li>
+                <li><i class="list-item-icon fas fa-award"></i>Google Data Analytics - Professional Certificate, Google (Coursera)</li>
+                <li><i class="list-item-icon fas fa-award"></i>Microsoft Azure Data Fundamentals, Microsoft (Coursera)</li>
             </ul>
         </section>
 
