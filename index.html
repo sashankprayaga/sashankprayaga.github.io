@@ -6,16 +6,22 @@
     <title>Sashank Prayaga - Data Engineer Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
-        .container { max-width: 960px; margin: 40px auto; background: #fff; padding: 40px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        header { text-align: center; margin-bottom: 30px; }
-        header h1 { margin: 0; font-size: 2em; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; background: #f4f4f4; color: #333; }
+        .container { max-width: 960px; margin: 50px auto; background: #fff; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-radius: 10px; }
+        header { text-align: center; margin-bottom: 40px; }
+        header h1 { margin: 0; font-size: 2.5em; color: #222; }
         header p { margin: 5px 0; color: #555; }
-        section { margin-bottom: 30px; }
-        h2 { border-bottom: 2px solid #007acc; padding-bottom: 5px; color: #007acc; }
+        .icons { margin-top: 15px; }
+        .icons a { margin: 0 10px; display: inline-block; text-decoration: none; }
+        .icons img { width: 28px; height: 28px; vertical-align: middle; }
+        section { margin-bottom: 40px; }
+        h2 { border-bottom: 2px solid #007acc; padding-bottom: 5px; margin-bottom: 15px; color: #007acc; }
         ul { padding-left: 20px; }
         li { margin-bottom: 8px; }
-        .footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #aaa; }
+        .footer { text-align: center; font-size: 0.9em; color: #aaa; margin-top: 50px; }
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -23,117 +29,99 @@
         <header>
             <h1>Sashank Prayaga</h1>
             <p>📍 Hilden, Germany | 📧 <a href="mailto:sashankprayaga93@gmail.com">sashankprayaga93@gmail.com</a> | 📞 +49 176 60600047</p>
-            <p>💻 Data Engineer | AWS | Spark | ML & Data Infrastructure</p>
+            <p>💻 Data Engineer | AWS | Apache Spark | ML Infrastructure | Data Pipelines</p>
+            <div class="icons">
+                <a href="https://www.linkedin.com/in/sashank-prayaga-740a36107/" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" style="filter: invert(27%) sepia(98%) saturate(624%) hue-rotate(186deg) brightness(95%) contrast(97%);">
+                </a>
+                <a href="https://github.com/sashankprayaga" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" style="filter: invert(0%);">
+                </a>
+            </div>
         </header>
 
         <section>
             <h2>Professional Summary</h2>
-            <p>Results-driven Data Engineer with 4+ years of experience in building scalable data pipelines, cloud infrastructure, and ML solutions. Skilled in Apache Airflow, AWS (Redshift, Lambda, RDS), Glue, PySpark, FastAPI, Streamlit, MLflow, and dashboarding with Power BI/QuickSight. Passionate about creating reusable infrastructure for production-ready data systems.</p>
+            <p>Results-driven Data Engineer with 4+ years of experience in building scalable data pipelines, cloud infrastructure, and ML solutions. Skilled in Apache Airflow, AWS, Glue, PySpark, FastAPI, Streamlit, and MLflow. Proven track record in delivering impactful systems and automating infrastructure for analytics, ML, and business insights.</p>
         </section>
 
         <section>
             <h2>Experience</h2>
-
-            <p><strong>Yara International</strong><br>
-            📍 Berlin, Germany • 🗓️ Jun 2022 – Present<br>
-            <strong>Role:</strong> Data Engineer</p>
+            <p><strong>Yara International</strong><br>📍 Berlin, Germany • 🗓️ Jun 2022 – Present<br><strong>Role:</strong> Data Engineer</p>
             <ul>
                 <li><strong>🚀 Technical Accomplishments</strong>
                     <ul>
-                        <li>Designed AWS Glue ETL pipelines using PySpark and Redshift Spectrum, reducing processing time by 30%.</li>
-                        <li>Managed scalable ML infrastructure using ECS, CloudFormation, and CI/CD pipelines.</li>
-                        <li>Implemented data quality checks and optimized Airflow DAGs for 20% efficiency gain.</li>
+                        <li>Built AWS Glue pipelines using PySpark and Redshift Spectrum (30% faster processing).</li>
+                        <li>Managed ML infrastructure with ECS, CloudFormation, and CI/CD.</li>
+                        <li>Enhanced data pipeline efficiency with Airflow DAGs and validation checks.</li>
                     </ul>
                 </li>
                 <li><strong>📊 Business Impact</strong>
                     <ul>
-                        <li>Developed production optimization models that improved throughput and product quality.</li>
-                        <li>Built QuickSight and Power BI dashboards for real-time reporting and insights.</li>
+                        <li>Production optimization algorithms improved throughput and quality.</li>
+                        <li>Created dashboards using QuickSight and Power BI for business intelligence.</li>
                     </ul>
                 </li>
                 <li><strong>🤝 Collaboration</strong>
                     <ul>
-                        <li>Worked with data scientists to build reusable AWS templates for consistent deployment.</li>
-                        <li>Standardized and shared ML development infrastructure across project teams.</li>
+                        <li>Developed reusable AWS templates with data scientists for standardized deployment.</li>
+                        <li>Supported multiple ML projects with shared, cloud-based infrastructure.</li>
                     </ul>
                 </li>
             </ul>
 
-            <p><strong>Bosch Rexroth</strong><br>
-            📍 Homburg, Germany • 🗓️ Jul 2020 – Jan 2021<br>
-            <strong>Role:</strong> Data Science Intern</p>
+            <p><strong>Bosch Rexroth</strong><br>📍 Homburg, Germany • 🗓️ Jul 2020 – Jan 2021<br><strong>Role:</strong> Data Science Intern</p>
             <ul>
                 <li><strong>🚀 Technical Accomplishments</strong>
                     <ul>
-                        <li>Developed ML models using sensor data to detect heat/mass flow anomalies with 95% accuracy.</li>
-                        <li>Used Plotly and Seaborn for EDA, and Optuna to boost model performance by 20%.</li>
+                        <li>Built ML models detecting flow anomalies with 95% accuracy using sensor data.</li>
+                        <li>Improved model performance by 20% with Optuna hyperparameter tuning.</li>
                     </ul>
                 </li>
                 <li><strong>📊 Business Impact</strong>
                     <ul>
-                        <li>Improved predictive maintenance reliability, reducing unplanned downtime.</li>
-                    </ul>
-                </li>
-                <li><strong>🤝 Collaboration</strong>
-                    <ul>
-                        <li>Worked with process engineers to map operational parameters to performance metrics.</li>
+                        <li>Enabled predictive maintenance by identifying key operational parameters.</li>
                     </ul>
                 </li>
             </ul>
 
-            <p><strong>Amazon Development Centre</strong><br>
-            📍 Hyderabad, India • 🗓️ Sep 2016 – Jun 2017<br>
-            <strong>Role:</strong> Data Analyst - Last Mile Delivery</p>
+            <p><strong>Amazon Development Centre</strong><br>📍 Hyderabad, India • 🗓️ Sep 2016 – Jun 2017<br><strong>Role:</strong> Data Analyst - Last Mile Delivery</p>
             <ul>
-                <li><strong>🚀 Technical Accomplishments</strong>
-                    <ul>
-                        <li>Optimized routing and delivery models for Amazon’s North America logistics network.</li>
-                    </ul>
-                </li>
-                <li><strong>📊 Business Impact</strong>
-                    <ul>
-                        <li>Improved last-mile delivery efficiency by 15% and tested new delivery systems with 98% success rate.</li>
-                    </ul>
-                </li>
+                <li>Optimized last-mile logistics, increasing efficiency by 15% and delivering 98% test success.</li>
             </ul>
         </section>
 
         <section>
             <h2>Education</h2>
-            <p><strong>M.Sc. in Commercial Vehicle Technology</strong>, TU Kaiserslautern, Germany – Apr 2022</p>
-            <p><strong>B.Tech in Mechanical Engineering</strong>, ICFAI University, Hyderabad – Jul 2016</p>
+            <p><strong>M.Sc. in Commercial Vehicle Technology</strong>, TU Kaiserslautern – Apr 2022</p>
+            <p><strong>B.Tech in Mechanical Engineering</strong>, ICFAI University – Jul 2016</p>
         </section>
 
         <section>
             <h2>Projects</h2>
             <p><strong>Defect Detection in Rail-Guided Vehicles</strong></p>
-            <ul>
-                <li>ML-based detection of 8 mechanical defects using engineered features and model deployment via FastAPI and Streamlit.</li>
-            </ul>
-            <p><strong>Intelligent Drive Mode Selection</strong></p>
-            <ul>
-                <li>Optimized hybrid vehicle modes using ML and vehicle telemetry for fuel efficiency.</li>
-            </ul>
+            <ul><li>Built ML models with TSFEL features, deployed via FastAPI and Streamlit, tracked with MLflow.</li></ul>
+            <p><strong>Drive Mode Optimization for Hybrid Powertrains</strong></p>
+            <ul><li>Used telemetry data and ML models to optimize fuel-efficient drive modes.</li></ul>
         </section>
 
         <section>
             <h2>Skills</h2>
             <ul>
-                <li><strong>Programming:</strong> Python, SQL, R, C++</li>
-                <li><strong>Data Engineering:</strong> Airflow, Spark, Kafka, ETL/ELT</li>
-                <li><strong>Cloud:</strong> AWS (Redshift, RDS, S3, EC2, Lambda, CloudFormation)</li>
-                <li><strong>ML & Deployment:</strong> Supervised/Unsupervised ML, Anomaly Detection, FastAPI, Streamlit, MLflow, CI/CD</li>
-                <li><strong>Databases:</strong> Redshift, Snowflake, DynamoDB, Postgres, RDS, Amazon S3</li>
+                <li><strong>Languages:</strong> Python, SQL, R, C++</li>
+                <li><strong>Tools:</strong> Airflow, Spark, Kafka, FastAPI, Streamlit, MLflow</li>
+                <li><strong>Cloud:</strong> AWS (Redshift, Lambda, RDS, S3, ECS, CloudFormation)</li>
+                <li><strong>Databases:</strong> Redshift, Snowflake, DynamoDB, Postgres</li>
                 <li><strong>Visualization:</strong> Power BI, QuickSight, Plotly, Seaborn</li>
-                <li><strong>Infra:</strong> Docker, CloudFormation, CI/CD Pipelines</li>
+                <li><strong>Infra:</strong> Docker, CI/CD Pipelines, CloudFormation</li>
             </ul>
         </section>
 
         <section>
-            <h2>Certifications & Professional Development</h2>
+            <h2>Certifications</h2>
             <ul>
                 <li>AWS Certified AI Practitioner</li>
-                <li>Apache Airflow 3 Fundamentals – Astronomer</li>
+                <li>Apache Airflow Fundamentals – Astronomer</li>
                 <li>dbt Fundamentals – dbt learn</li>
                 <li>Google Data Analytics – Coursera</li>
                 <li>Azure Data Fundamentals – Microsoft</li>
@@ -143,15 +131,15 @@
         <section>
             <h2>Soft Skills</h2>
             <ul>
-                <li>Cross-functional Collaboration</li>
                 <li>Problem Solving</li>
+                <li>Cross-functional Collaboration</li>
                 <li>Communication</li>
                 <li>Attention to Detail</li>
             </ul>
         </section>
 
         <div class="footer">
-            &copy; 2025 Sashank Prayaga | All rights reserved
+            &copy; 2025 Sashank Prayaga | Powered by GitHub Pages
         </div>
     </div>
 </body>
