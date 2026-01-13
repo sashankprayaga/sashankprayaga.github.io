@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sashank Prayaga | Data Engineer</title>
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Google Fonts Import */
@@ -96,7 +95,6 @@
             font-weight: 700;
         }
 
-        /* Static Subtitle */
         header .subtitle {
             font-size: 1.5rem;
             font-weight: 300;
@@ -135,11 +133,11 @@
         /* --- General Section Styling --- */
         .section {
             padding: 5rem 2rem;
-            padding-top: 6rem; /* Add padding to offset for sticky nav */
+            padding-top: 6rem;
         }
         
         #summary.section {
-            padding-top: 0; /* Remove top padding for the first section after the header */
+            padding-top: 0;
         }
 
         .section-title {
@@ -227,14 +225,14 @@
         .skill-category li i {
             color: var(--secondary-color);
             margin-right: 10px;
-            width: 20px; /* Align icons */
+            width: 20px;
             text-align: center;
         }
 
         /* --- Experience Timeline --- */
         .timeline {
             position: relative;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -317,6 +315,7 @@
         .timeline-content ul {
             padding-left: 20px;
             margin-top: 1rem;
+            font-size: 0.95rem;
         }
 
         /* --- Projects Section --- */
@@ -387,15 +386,20 @@
             max-width: 800px;
             margin: 2rem auto 0;
             text-align: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
         
         .cert-item {
-            margin-bottom: 1rem;
             font-size: 1.1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
         }
         
         .cert-item i {
@@ -476,13 +480,12 @@
     <header>
         <div class="container">
             <h1>SASHANK PRAYAGA</h1>
-            <p class="subtitle">Data Engineer | Cloud Infrastructure | Machine Learning</p>
+            <p class="subtitle">Data Engineer | MLOps | Cloud Infrastructure</p>
             <div class="contact-info">
                 <a href="https://www.linkedin.com/in/sashank-prayaga-740a36107/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 <a href="https://github.com/sashankprayaga" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 <a href="mailto:sashankprayaga93@gmail.com"><i class="fas fa-envelope"></i> Email</a>
                 <a href="tel:+4917660600047"><i class="fas fa-phone"></i> Phone</a>
-                <!-- New Download CV Link -->
                 <a href="Sashank_Prayaga_CV_DE.pdf" download="Sashank_Prayaga_CV_DE.pdf"><i class="fas fa-download"></i> Download CV</a>
             </div>
         </div>
@@ -490,7 +493,7 @@
 
     <main>
         <section id="summary" class="section">
-            <p>Results-driven Data Engineer with over 4 years of experience in building scalable data pipelines, cloud infrastructure, and machine learning solutions. Passionate about creating reusable infrastructure and enabling data-driven decision-making in production and business environments.</p>
+            <p>Results-driven Data Engineer with over 4 years of experience in building scalable data pipelines, cloud infrastructure, and machine learning solutions. [cite_start]Skilled in automating end-to-end ETL workflows and productionalizing ML models using AWS serverless architectures. [cite: 68, 69]</p>
         </section>
 
         <section id="skills" class="section">
@@ -500,55 +503,51 @@
                     <div class="skill-category">
                         <h3><i class="fas fa-code"></i> Programming & Databases</h3>
                         <ul>
-                            <li><i class="fab fa-python"></i> Python</li>
-                            <li><i class="fas fa-database"></i> SQL</li>
-                            <li><i class="fab fa-r-project"></i> R, C++</li>
-                            <li><i class="fas fa-warehouse"></i> Datawarehouse (Redshift, Snowflake)</li>
-                            <li><i class="fas fa-database"></i> Relational Databases (Postgres, RDS)</li>
+                            [cite_start]<li><i class="fab fa-python"></i> Python, SQL, R, C++ [cite: 120]</li>
+                            [cite_start]<li><i class="fas fa-warehouse"></i> Redshift, Snowflake [cite: 115]</li>
+                            [cite_start]<li><i class="fas fa-database"></i> Postgres, DynamoDB, RDS [cite: 115]</li>
                         </ul>
                     </div>
                     <div class="skill-category">
                         <h3><i class="fas fa-cogs"></i> Data Engineering</h3>
                         <ul>
-                            <li><i class="fas fa-wind"></i> Apache Airflow</li>
-                            <li><i class="fas fa-bolt"></i> Apache Spark & Kafka</li>
-                            <li><i class="fas fa-exchange-alt"></i> ETL, ELT</li>
-                            <li><i class="fas fa-cubes"></i> Datalake (Amazon S3)</li>
+                            [cite_start]<li><i class="fas fa-wind"></i> Apache Airflow [cite: 121]</li>
+                            [cite_start]<li><i class="fas fa-bolt"></i> Spark & Kafka [cite: 121]</li>
+                            [cite_start]<li><i class="fas fa-exchange-alt"></i> ETL, ELT, SageMaker Pipelines [cite: 121]</li>
+                            [cite_start]<li><i class="fas fa-cubes"></i> Amazon S3 Datalake [cite: 115]</li>
                         </ul>
                     </div>
                     <div class="skill-category">
-                        <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
+                        <h3><i class="fas fa-cloud"></i> Infrastructure & DevOps</h3>
                         <ul>
-                            <li><i class="fab fa-aws"></i> AWS (Redshift, RDS, Lambda, S3, EC2)</li>
-                            <li><i class="fas fa-file-code"></i> IaC (CloudFormation)</li>
-                            <li><i class="fab fa-docker"></i> Containerization (Docker)</li>
-                            <li><i class="fas fa-sync-alt"></i> CI/CD Pipelines with Git</li>
+                            [cite_start]<li><i class="fab fa-aws"></i> AWS (Lambda, API Gateway, ECS) [cite: 114]</li>
+                            [cite_start]<li><i class="fas fa-file-code"></i> IaC (CloudFormation, Jinja2) [cite: 122]</li>
+                            [cite_start]<li><i class="fab fa-docker"></i> Docker & AWS CodeBuild [cite: 122]</li>
+                            [cite_start]<li><i class="fas fa-shield-alt"></i> Trivy Security Scanning [cite: 115]</li>
                         </ul>
                     </div>
                     <div class="skill-category">
-                        <h3><i class="fas fa-robot"></i> ML & Deployment</h3>
+                        <h3><i class="fas fa-rocket"></i> ML & Deployment</h3>
                         <ul>
-                            <li><i class="fas fa-brain"></i> Supervised & Unsupervised Learning</li>
-                            <li><i class="fas fa-search"></i> Anomaly Detection</li>
-                            <li><i class="fas fa-rocket"></i> Deployment (FastAPI, Streamlit)</li>
-                            <li><i class="fas fa-flask"></i> MLflow</li>
+                            [cite_start]<li><i class="fas fa-rocket"></i> FastAPI, Streamlit, OpenAPI [cite: 115]</li>
+                            [cite_start]<li><i class="fas fa-flask"></i> MLflow [cite: 115]</li>
+                            [cite_start]<li><i class="fas fa-search"></i> Anomaly Detection [cite: 49]</li>
+                            [cite_start]<li><i class="fas fa-check-double"></i> CI/CD Quality Gates [cite: 80]</li>
                         </ul>
                     </div>
                     <div class="skill-category">
                         <h3><i class="fas fa-chart-bar"></i> Visualization</h3>
                         <ul>
-                            <li><i class="fas fa-chart-pie"></i> Power BI</li>
-                            <li><i class="fas fa-chart-line"></i> Amazon QuickSight</li>
-                            <li><i class="fas fa-chart-area"></i> Plotly, Seaborn</li>
+                            [cite_start]<li><i class="fas fa-chart-pie"></i> Power BI & Amazon QuickSight [cite: 116]</li>
+                            [cite_start]<li><i class="fas fa-chart-area"></i> Plotly, Seaborn [cite: 116]</li>
                         </ul>
                     </div>
                     <div class="skill-category">
                         <h3><i class="fas fa-handshake"></i> Soft Skills</h3>
                         <ul>
-                            <li><i class="fas fa-users"></i> Cross-functional Collaboration</li>
-                            <li><i class="fas fa-lightbulb"></i> Problem Solving</li>
-                            <li><i class="fas fa-comments"></i> Communication</li>
-                            <li><i class="fas fa-check-circle"></i> Attention to Detail</li>
+                            [cite_start]<li><i class="fas fa-users"></i> Cross-functional Collaboration [cite: 123]</li>
+                            [cite_start]<li><i class="fas fa-lightbulb"></i> Problem Solving [cite: 123]</li>
+                            [cite_start]<li><i class="fas fa-comments"></i> Communication [cite: 123]</li>
                         </ul>
                     </div>
                 </div>
@@ -563,12 +562,14 @@
                         <div class="timeline-content">
                             <h3>Data Engineer</h3>
                             <p class="company">Yara International</p>
-                            <p class="date">Jun 2022 - Present | Berlin, Germany</p>
+                            <p class="date">Jun 2022 - Present | [cite_start]Berlin, Germany [cite: 74]</p>
                             <ul>
-                                <li>Designed and implemented an AWS data pipeline, reducing data processing time by 30%.</li>
-                                <li>Managed and optimized cloud-based ML infrastructure, reducing cloud costs by 20%.</li>
-                                <li>Built interactive dashboards using Amazon QuickSight and Power BI.</li>
-                                <li>Improved data pipeline processing efficiency by 20%.</li>
+                                [cite_start]<li>Designed AWS pipelines using Glue and Redshift Spectrum, reducing processing time by 30%. [cite: 75]</li>
+                                [cite_start]<li>Built serverless ML inference using containerized Lambda and API Gateway with Jinja2-parameterized IaC. [cite: 76, 77]</li>
+                                [cite_start]<li>Orchestrated event-driven retraining workflows using SageMaker Pipelines, reducing manual ops. [cite: 78, 79]</li>
+                                [cite_start]<li>Implemented CI/CD quality gates with Pytest and Trivy security scanning for container compliance. [cite: 80]</li>
+                                [cite_start]<li>Standardized API contracts using OpenAPI and SNS-based artifact publishing. [cite: 82]</li>
+                                [cite_start]<li>Managed ECS and CloudFormation infrastructure, achieving 20% cost reduction. [cite: 81]</li>
                             </ul>
                         </div>
                     </div>
@@ -576,22 +577,22 @@
                         <div class="timeline-content">
                             <h3>Intern - Data Scientist</h3>
                             <p class="company">Bosch Rexroth</p>
-                            <p class="date">Jul 2020 - Jan 2021 | Homburg (Saar), Germany</p>
+                            <p class="date">Jul 2020 - Jan 2021 | [cite_start]Homburg, Germany [cite: 88, 89]</p>
                             <ul>
-                                <li>Developed ML models to detect anomalies with 95% accuracy.</li>
-                                <li>Performed exploratory data analysis to uncover key operational parameters.</li>
-                                <li>Improved model performance by 20% through hyperparameter tuning.</li>
+                                [cite_start]<li>Developed ML models for heat/mass flow anomaly detection with 95% accuracy. [cite: 90]</li>
+                                [cite_start]<li>Uncovered operational parameters impacting system efficiency through EDA. [cite: 91]</li>
+                                [cite_start]<li>Achieved 20% model performance boost via hyperparameter tuning with Optuna. [cite: 92]</li>
                             </ul>
                         </div>
                     </div>
                     <div class="timeline-item left">
                         <div class="timeline-content">
-                            <h3>Data Analyst - Last Mile Delivery</h3>
+                            <h3>Data Analyst - Last Mile</h3>
                             <p class="company">Amazon Development Centre</p>
-                            <p class="date">Sep 2016 - Jun 2017 | Hyderabad, India</p>
+                            <p class="date">Sep 2016 - Jun 2017 | [cite_start]Hyderabad, India [cite: 95]</p>
                             <ul>
-                                <li>Optimized last-mile logistics, improving delivery efficiency by 15%.</li>
-                                <li>Played a key role in testing a new delivery solution with a 98% success rate.</li>
+                                [cite_start]<li>Improved delivery efficiency by 15% for North America logistics. [cite: 96]</li>
+                                [cite_start]<li>Tested new delivery solutions achieving a 98% success rate. [cite: 97]</li>
                             </ul>
                         </div>
                     </div>
@@ -605,14 +606,14 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-content">
-                            <h3>Master Thesis - Defect Detection in Automated Rail-Guided Vehicles</h3>
-                            <p>Collected sensor data to detect 8 distinct mechanical defects. Engineered features and trained multiple ML algorithms, achieving 90% accuracy. Deployed the final model using FastAPI and Streamlit, and implemented MLflow to track experiments.</p>
+                            <h3>Master Thesis - Defect Detection in Rail-Guided Vehicles</h3>
+                            <p>Detected 8 mechanical defects with 90% accuracy using sensor data. [cite_start]Deployed via FastAPI/Streamlit and tracked experiments with MLflow. [cite: 106, 107, 108]</p>
                         </div>
                     </div>
                     <div class="project-card">
                         <div class="project-content">
                             <h3>Intelligent Drive Mode Selection in Hybrid Powertrains</h3>
-                            <p>Collaborated to develop an ML model for optimizing the controller in a mild hybrid vehicle. The solution was designed to maximize fuel efficiency by predicting optimal drive modes based on historical driving data and vehicle telemetry.</p>
+                            [cite_start]<p>Optimized hybrid vehicle controllers using ML to predict drive modes based on telemetry, maximizing fuel efficiency. [cite: 109, 110]</p>
                         </div>
                     </div>
                 </div>
@@ -625,13 +626,13 @@
                 <div class="education-grid">
                     <div class="education-card">
                         <h3>M.Sc. in Commercial Vehicle Technology</h3>
-                        <p>TU Kaiserslautern, Germany</p>
-                        <p>Apr 2022</p>
+                        [cite_start]<p>TU Kaiserslautern, Germany [cite: 99]</p>
+                        [cite_start]<p>Apr 2022 [cite: 100]</p>
                     </div>
                     <div class="education-card">
                         <h3>B.Tech in Mechanical Engineering</h3>
-                        <p>ICFAI Foundation for Higher Education, India</p>
-                        <p>Jul 2016</p>
+                        [cite_start]<p>ICFAI Foundation for Higher Education, India [cite: 102]</p>
+                        [cite_start]<p>Jul 2016 [cite: 103]</p>
                     </div>
                 </div>
             </div>
@@ -641,18 +642,18 @@
             <div class="container">
                 <h2 class="section-title">Professional Development</h2>
                 <div class="certifications-list">
-                    <div class="cert-item"><i class="fab fa-aws"></i> AWS Certified AI Practitioner</div>
-                    <div class="cert-item"><i class="fas fa-wind"></i> Apache Airflow 3 Fundamentals</div>
-                    <div class="cert-item"><i class="fas fa-database"></i> dbt Fundamentals</div>
-                    <div class="cert-item"><i class="fab fa-google"></i> Google Data Analytics - Professional Certificate</div>
-                    <div class="cert-item"><i class="fab fa-microsoft"></i> Microsoft Azure Data Fundamentals</div>
+                    [cite_start]<div class="cert-item"><i class="fab fa-aws"></i> AWS Certified AI Practitioner [cite: 125]</div>
+                    [cite_start]<div class="cert-item"><i class="fas fa-wind"></i> Apache Airflow 3 Fundamentals [cite: 126]</div>
+                    [cite_start]<div class="cert-item"><i class="fas fa-database"></i> dbt Fundamentals [cite: 127]</div>
+                    [cite_start]<div class="cert-item"><i class="fab fa-google"></i> Google Data Analytics [cite: 128]</div>
+                    [cite_start]<div class="cert-item"><i class="fab fa-microsoft"></i> Azure Data Fundamentals [cite: 128]</div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Sashank Prayaga | Built with GitHub Pages</p>
+        <p>&copy; 2025 Sashank Prayaga | Data Engineer Portfolio</p>
     </footer>
 
 </body>
