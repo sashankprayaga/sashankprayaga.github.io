@@ -1,660 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sashank Prayaga | Data Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Google Fonts Import */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-        /* CSS Variables for easy theme management */
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --background-color: #ecf0f1;
-            --card-bg-color: #ffffff;
-            --text-color: #34495e;
-            --header-color: #ffffff;
-            --timeline-color: #3498db;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        /* --- Navigation Bar --- */
-        .navbar {
-            background-color: var(--card-bg-color);
-            border-bottom: 1px solid #e0e0e0;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        .navbar .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* --- Header --- */
-        header {
-            background: var(--primary-color);
-            color: var(--header-color);
-            padding: 5rem 2rem;
-            text-align: center;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        header .subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: var(--secondary-color);
-            margin-top: 0.5rem;
-        }
-
-        header .contact-info {
-            margin-top: 2.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        header .contact-info a {
-            color: var(--header-color);
-            text-decoration: none;
-            transition: color 0.3s ease, transform 0.3s ease;
-            font-size: 1.1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        header .contact-info a:hover {
-            color: var(--primary-color);
-            background-color: var(--header-color);
-            transform: translateY(-3px);
-        }
-
-        /* --- General Section Styling --- */
-        .section {
-            padding: 5rem 2rem;
-            padding-top: 6rem;
-        }
-        
-        #summary.section {
-            padding-top: 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 4rem;
-            position: relative;
-            font-weight: 600;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: var(--secondary-color);
-            border-radius: 2px;
-        }
-
-        /* --- Summary Section --- */
-        #summary {
-            background: var(--card-bg-color);
-            border-radius: 15px;
-            margin: -3rem auto 0;
-            position: relative;
-            z-index: 10;
-            max-width: 900px;
-            padding: 3rem;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        #summary p {
-            font-size: 1.1rem;
-            text-align: center;
-            line-height: 1.8;
-        }
-
-        /* --- Skills Section --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .skill-category {
-            background: var(--card-bg-color);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .skill-category:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(44, 62, 80, 0.1);
-        }
-
-        .skill-category h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--background-color);
-            padding-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .skill-category h3 i {
-            margin-right: 10px;
-        }
-
-        .skill-category ul {
-            list-style: none;
-        }
-
-        .skill-category li {
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .skill-category li i {
-            color: var(--secondary-color);
-            margin-right: 10px;
-            width: 20px;
-            text-align: center;
-        }
-
-        /* --- Experience Timeline --- */
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background-color: var(--timeline-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-            z-index: 0;
-            border-radius: 2px;
-        }
-
-        .timeline-item {
-            padding: 20px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-
-        .timeline-item.left {
-            left: 0;
-        }
-
-        .timeline-item.right {
-            left: 50%;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            background-color: white;
-            border: 4px solid var(--timeline-color);
-            top: 30px;
-            border-radius: 50%;
-            z-index: 1;
-            transition: transform 0.3s ease;
-        }
-        
-        .timeline-item:hover::after {
-            transform: scale(1.2);
-        }
-
-        .timeline-item.right::after {
-            left: -12px;
-        }
-        
-        .timeline-item.left::after {
-            right: -12px;
-        }
-
-        .timeline-content {
-            padding: 25px;
-            background-color: var(--card-bg-color);
-            position: relative;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-        }
-        
-        .timeline-content h3 {
-            color: var(--primary-color);
-        }
-        
-        .timeline-content .company {
-            font-weight: 600;
-            color: var(--secondary-color);
-        }
-        
-        .timeline-content .date {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-bottom: 1rem;
-        }
-        
-        .timeline-content ul {
-            padding-left: 20px;
-            margin-top: 1rem;
-            font-size: 0.95rem;
-        }
-
-        /* --- Projects Section --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--card-bg-color);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(44, 62, 80, 0.12);
-        }
-        
-        .project-content {
-            padding: 2rem;
-        }
-        
-        .project-content h3 {
-            color: var(--primary-color);
-        }
-
-        .project-content p {
-            margin: 1rem 0;
-        }
-
-        /* --- Education Section --- */
-        .education-grid {
-             display: flex;
-             justify-content: center;
-             gap: 2rem;
-             flex-wrap: wrap;
-        }
-        
-        .education-card {
-            background: var(--card-bg-color);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            width: 45%;
-            min-width: 300px;
-        }
-        
-        .education-card h3 {
-            color: var(--secondary-color);
-        }
-
-        /* --- Certifications Section --- */
-        #certifications {
-            background: var(--primary-color);
-            color: var(--header-color);
-        }
-        
-        #certifications .section-title::after {
-            background: var(--header-color);
-        }
-        
-        .certifications-list {
-            max-width: 800px;
-            margin: 2rem auto 0;
-            text-align: center;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .cert-item {
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-        }
-        
-        .cert-item i {
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-        }
-
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 2.5rem;
-            background: #212f3d;
-            color: var(--header-color);
-        }
-        
-        /* --- Responsive Design --- */
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            header {
-                padding: 4rem 1rem;
-            }
-            
-            header h1 {
-                font-size: 2.8rem;
-            }
-            
-            header .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            header .contact-info {
-                gap: 1rem;
-            }
-            
-            .timeline::after {
-                left: 20px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 60px;
-                padding-right: 10px;
-            }
-
-            .timeline-item.left, .timeline-item.right {
-                left: 0;
-            }
-
-            .timeline-item::after {
-                left: 8px;
-            }
-            
-            .education-card {
-                width: 100%;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sashank Prayaga | Data Engineer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary-color:#2c3e50;--secondary-color:#3498db;--background-color:#ecf0f1;--card-bg-color:#fff;--text-color:#34495e;--header-color:#fff;--timeline-color:#3498db}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--background-color);color:var(--text-color);line-height:1.6}
+.container{max-width:1200px;margin:auto;padding:20px}
+.navbar{background:var(--card-bg-color);border-bottom:1px solid #e0e0e0;padding:1rem 0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.navbar .container{display:flex;justify-content:center;align-items:center;padding-top:0;padding-bottom:0}
+.nav-links{list-style:none;display:flex;gap:2rem}
+.nav-links a{text-decoration:none;color:var(--text-color);font-weight:600;transition:color .3s}
+.nav-links a:hover{color:var(--secondary-color)}
+header{background:var(--primary-color);color:var(--header-color);padding:5rem 2rem;text-align:center;border-bottom-left-radius:20px;border-bottom-right-radius:20px;position:relative;overflow:hidden}
+header h1{font-size:3.5rem;margin-bottom:.5rem;font-weight:700}
+header .subtitle{font-size:1.5rem;font-weight:300;color:var(--secondary-color);margin-top:.5rem}
+header .location{margin-top:.5rem;font-size:1rem;opacity:.8}
+header .contact-info{margin-top:2.5rem;display:flex;justify-content:center;align-items:center;gap:1.5rem;flex-wrap:wrap}
+header .contact-info a{color:var(--header-color);text-decoration:none;transition:color .3s,transform .3s;font-size:1.1rem;display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;border-radius:50px;background:rgba(255,255,255,.1)}
+header .contact-info a:hover{color:var(--primary-color);background:var(--header-color);transform:translateY(-3px)}
+.section{padding:5rem 2rem;padding-top:6rem}
+#summary.section{padding-top:3rem}
+.section-title{text-align:center;font-size:2.8rem;margin-bottom:4rem;position:relative;font-weight:600}
+.section-title::after{content:'';position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);width:100px;height:4px;background:var(--secondary-color);border-radius:2px}
+#summary{background:var(--card-bg-color);border-radius:15px;margin:-3rem auto 0;position:relative;z-index:10;max-width:900px;padding:3rem;box-shadow:0 15px 30px rgba(0,0,0,.1)}
+#summary p{font-size:1.1rem;text-align:center;line-height:1.8}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:2rem}
+.skill-category{background:var(--card-bg-color);padding:2rem;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.05);transition:transform .3s,box-shadow .3s}
+.skill-category:hover{transform:translateY(-10px);box-shadow:0 15px 25px rgba(44,62,80,.1)}
+.skill-category h3{color:var(--secondary-color);margin-bottom:1rem;border-bottom:2px solid var(--background-color);padding-bottom:.5rem;display:flex;align-items:center}
+.skill-category h3 i{margin-right:10px}
+.skill-category ul{list-style:none}
+.skill-category li{margin-bottom:.75rem;display:flex;align-items:flex-start}
+.skill-category li i{color:var(--secondary-color);margin-right:10px;margin-top:.3rem;width:20px;text-align:center;flex-shrink:0}
+.timeline{position:relative;max-width:900px;margin:0 auto}
+.timeline::after{content:'';position:absolute;width:4px;background:var(--timeline-color);top:0;bottom:0;left:50%;margin-left:-2px;z-index:0;border-radius:2px}
+.timeline-item{padding:20px 40px;position:relative;width:50%}
+.timeline-item.left{left:0}
+.timeline-item.right{left:50%}
+.timeline-item::after{content:'';position:absolute;width:24px;height:24px;background:#fff;border:4px solid var(--timeline-color);top:30px;border-radius:50%;z-index:1;transition:transform .3s}
+.timeline-item:hover::after{transform:scale(1.2)}
+.timeline-item.right::after{left:-12px}
+.timeline-item.left::after{right:-12px}
+.timeline-content{padding:25px;background:var(--card-bg-color);position:relative;border-radius:8px;box-shadow:0 5px 15px rgba(0,0,0,.07)}
+.timeline-content h3{color:var(--primary-color)}
+.timeline-content .company{font-weight:600;color:var(--secondary-color)}
+.timeline-content .date{font-size:.9rem;color:#7f8c8d;margin-bottom:1rem}
+.timeline-content ul{padding-left:20px;margin-top:1rem;font-size:.95rem}
+.timeline-content li{margin-bottom:.5rem}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem}
+.project-card{background:var(--card-bg-color);border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.08);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.project-card:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(44,62,80,.12)}
+.project-content{padding:2rem}
+.project-content h3{color:var(--primary-color)}
+.project-content ul{padding-left:20px;margin:1rem 0}
+.project-content li{margin-bottom:.5rem;font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
+.tags span{font-size:.8rem;background:var(--background-color);color:var(--secondary-color);padding:.2rem .7rem;border-radius:50px;font-weight:600}
+.education-grid{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.education-card{background:var(--card-bg-color);padding:2rem;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.05);text-align:center;width:45%;min-width:300px}
+.education-card h3{color:var(--secondary-color)}
+#certifications{background:var(--primary-color);color:var(--header-color)}
+#certifications .section-title::after{background:var(--header-color)}
+.certifications-list{max-width:800px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.cert-item{font-size:1.05rem;display:flex;align-items:center;justify-content:center;gap:15px;padding:12px;background:rgba(255,255,255,.05);border-radius:8px;text-align:left}
+.cert-item i{color:var(--secondary-color);font-size:1.5rem}
+.cert-item small{display:block;opacity:.7;font-size:.8rem}
+footer{text-align:center;padding:2.5rem;background:#212f3d;color:var(--header-color)}
+@media (max-width:768px){
+.nav-links{gap:1rem;flex-wrap:wrap;justify-content:center}
+header{padding:4rem 1rem}
+header h1{font-size:2.8rem}
+header .subtitle{font-size:1.2rem}
+header .contact-info{gap:1rem}
+.timeline::after{left:20px}
+.timeline-item{width:100%;padding-left:60px;padding-right:10px}
+.timeline-item.left,.timeline-item.right{left:0}
+.timeline-item::after{left:8px!important;right:auto!important}
+.education-card{width:100%}
+.projects-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="#summary">Summary</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav class="navbar">
+<div class="container">
+<ul class="nav-links">
+<li><a href="#summary">Summary</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#certifications">Certifications</a></li>
+</ul>
+</div>
+</nav>
 
-    <header>
-        <div class="container">
-            <h1>SASHANK PRAYAGA</h1>
-            <p class="subtitle">Data Engineer | MLOps | Cloud Infrastructure</p>
-            <div class="contact-info">
-                <a href="https://www.linkedin.com/in/sashank-prayaga-740a36107/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/sashankprayaga" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-                <a href="mailto:sashankprayaga93@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-                <a href="tel:+4917660600047"><i class="fas fa-phone"></i> Phone</a>
-                <a href="Sashank_Prayaga_CV_DE.pdf" download="Sashank_Prayaga_CV_DE.pdf"><i class="fas fa-download"></i> Download CV</a>
-            </div>
-        </div>
-    </header>
+<header>
+<div class="container">
+<h1>SASHANK PRAYAGA</h1>
+<p class="subtitle">Data Engineer | MLOps | Cloud Infrastructure</p>
+<p class="location"><i class="fas fa-map-marker-alt"></i> Hilden, Germany</p>
+<div class="contact-info">
+<a href="https://www.linkedin.com/in/sashank-prayaga-740a36107/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+<a href="https://github.com/sashankprayaga" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+<a href="mailto:sashankprayaga93@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+<a href="tel:+4917660600047"><i class="fas fa-phone"></i> Phone</a>
+<a href="Sashank_Prayaga_CV_DE.pdf" download="Sashank_Prayaga_CV_DE.pdf"><i class="fas fa-download"></i> Download CV</a>
+</div>
+</div>
+</header>
 
-    <main>
-        <section id="summary" class="section">
-            <p>Results-driven Data Engineer with over 4 years of experience in building scalable data pipelines, cloud infrastructure, and machine learning solutions. Skilled in automating end-to-end ETL workflows and productionalizing ML models using AWS serverless architectures.</p>
-        </section>
+<main>
+<section id="summary" class="section">
+<p>Data &amp; ML Engineer with over 4 years of experience building scalable telemetry pipelines, cloud infrastructure, and reproducible statistical/ML workflows across multi-plant manufacturing environments. Mechanical Engineering (B.Tech) and Commercial Vehicle Technology (M.Sc.) graduate skilled at connecting sensor and process data with physical engineering mechanisms. Proven track record in Python software engineering, campaign stability analysis, anomaly detection, and deploying explainable models with FastAPI, AWS, and Apache Airflow.</p>
+</section>
 
-        <section id="skills" class="section">
-            <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3><i class="fas fa-code"></i> Programming & Databases</h3>
-                        <ul>
-                            <li><i class="fab fa-python"></i> Python, SQL, R, C++</li>
-                            <li><i class="fas fa-warehouse"></i> Redshift, Snowflake</li>
-                            <li><i class="fas fa-database"></i> Postgres, DynamoDB, RDS</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-cogs"></i> Data Engineering</h3>
-                        <ul>
-                            <li><i class="fas fa-wind"></i> Apache Airflow</li>
-                            <li><i class="fas fa-bolt"></i> Spark & Kafka</li>
-                            <li><i class="fas fa-exchange-alt"></i> ETL, ELT, SageMaker Pipelines</li>
-                            <li><i class="fas fa-cubes"></i> Amazon S3 Datalake</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-cloud"></i> Infrastructure & DevOps</h3>
-                        <ul>
-                            <li><i class="fab fa-aws"></i> AWS (Lambda, API Gateway, ECS)</li>
-                            <li><i class="fas fa-file-code"></i> IaC (CloudFormation, Jinja2)</li>
-                            <li><i class="fab fa-docker"></i> Docker & AWS CodeBuild</li>
-                            <li><i class="fas fa-shield-alt"></i> Trivy Security Scanning</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-rocket"></i> ML & Deployment</h3>
-                        <ul>
-                            <li><i class="fas fa-rocket"></i> FastAPI, Streamlit, OpenAPI</li>
-                            <li><i class="fas fa-flask"></i> MLflow</li>
-                            <li><i class="fas fa-search"></i> Anomaly Detection</li>
-                            <li><i class="fas fa-check-double"></i> CI/CD Quality Gates</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-chart-bar"></i> Visualization</h3>
-                        <ul>
-                            <li><i class="fas fa-chart-pie"></i> Power BI & Amazon QuickSight</li>
-                            <li><i class="fas fa-chart-area"></i> Plotly, Seaborn</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-handshake"></i> Soft Skills</h3>
-                        <ul>
-                            <li><i class="fas fa-users"></i> Cross-functional Collaboration</li>
-                            <li><i class="fas fa-lightbulb"></i> Problem Solving</li>
-                            <li><i class="fas fa-comments"></i> Communication</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="skills" class="section">
+<div class="container">
+<h2 class="section-title">Skills</h2>
+<div class="skills-grid">
+<div class="skill-category">
+<h3><i class="fas fa-code"></i> Programming</h3>
+<ul>
+<li><i class="fab fa-python"></i> Python, SQL, R, C++, Bash</li>
+</ul>
+</div>
+<div class="skill-category">
+<h3><i class="fas fa-brain"></i> Data Science &amp; ML</h3>
+<ul>
+<li><i class="fas fa-table"></i> Pandas, NumPy, SciPy</li>
+<li><i class="fas fa-project-diagram"></i> Scikit-learn, XGBoost, LightGBM</li>
+<li><i class="fas fa-search"></i> SHAP, Optuna</li>
+</ul>
+</div>
+<div class="skill-category">
+<h3><i class="fas fa-cogs"></i> Data Engineering</h3>
+<ul>
+<li><i class="fas fa-wind"></i> Apache Airflow</li>
+<li><i class="fas fa-bolt"></i> PySpark &amp; Kafka</li>
+<li><i class="fas fa-exchange-alt"></i> Glue ETL, SageMaker Pipelines, dbt</li>
+</ul>
+</div>
+<div class="skill-category">
+<h3><i class="fas fa-cloud"></i> Cloud &amp; Infrastructure</h3>
+<ul>
+<li><i class="fab fa-aws"></i> AWS (Redshift, Lambda, S3, API Gateway, ECS, CloudFormation)</li>
+<li><i class="fab fa-docker"></i> Docker</li>
+</ul>
+</div>
+<div class="skill-category">
+<h3><i class="fas fa-rocket"></i> MLOps &amp; Quality</h3>
+<ul>
+<li><i class="fas fa-rocket"></i> FastAPI, Streamlit</li>
+<li><i class="fas fa-flask"></i> MLflow</li>
+<li><i class="fab fa-git-alt"></i> Git, CI/CD</li>
+<li><i class="fas fa-check-double"></i> pytest, Trivy Security</li>
+</ul>
+</div>
+<div class="skill-category">
+<h3><i class="fas fa-database"></i> Databases</h3>
+<ul>
+<li><i class="fas fa-warehouse"></i> Amazon Redshift, Snowflake</li>
+<li><i class="fas fa-database"></i> PostgreSQL, DynamoDB, Amazon RDS</li>
+</ul>
+</div>
+<div class="skill-category">
+<h3><i class="fas fa-chart-bar"></i> Visualization</h3>
+<ul>
+<li><i class="fas fa-chart-pie"></i> Power BI &amp; Amazon QuickSight</li>
+<li><i class="fas fa-chart-area"></i> Plotly, Seaborn</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
 
-        <section id="experience" class="section">
-            <div class="container">
-                <h2 class="section-title">Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <h3>Data Engineer</h3>
-                            <p class="company">Yara International</p>
-                            <p class="date">Jun 2022 - Present | Berlin, Germany</p>
-                            <ul>
-                                <li>Designed AWS pipelines using Glue and Redshift Spectrum, reducing processing time by 30%.</li>
-                                <li>Built serverless ML inference using containerized Lambda and API Gateway with Jinja2-parameterized IaC.</li>
-                                <li>Orchestrated event-driven retraining workflows using SageMaker Pipelines, reducing manual ops.</li>
-                                <li>Implemented CI/CD quality gates with Pytest and Trivy security scanning for container compliance.</li>
-                                <li>Standardized API contracts using OpenAPI and SNS-based artifact publishing.</li>
-                                <li>Managed ECS and CloudFormation infrastructure, achieving 20% cost reduction.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item right">
-                        <div class="timeline-content">
-                            <h3>Intern - Data Scientist</h3>
-                            <p class="company">Bosch Rexroth</p>
-                            <p class="date">Jul 2020 - Jan 2021 | Homburg, Germany</p>
-                            <ul>
-                                <li>Developed ML models for heat/mass flow anomaly detection with 95% accuracy.</li>
-                                <li>Uncovered operational parameters impacting system efficiency through EDA.</li>
-                                <li>Achieved 20% model performance boost via hyperparameter tuning with Optuna.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <h3>Data Analyst - Last Mile</h3>
-                            <p class="company">Amazon Development Centre</p>
-                            <p class="date">Sep 2016 - Jun 2017 | Hyderabad, India</p>
-                            <ul>
-                                <li>Improved delivery efficiency by 15% for North America logistics.</li>
-                                <li>Tested new delivery solutions achieving a 98% success rate.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="experience" class="section">
+<div class="container">
+<h2 class="section-title">Experience</h2>
+<div class="timeline">
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>Data Engineer</h3>
+<p class="company">Yara International</p>
+<p class="date">Jun 2022 - Present | Berlin / Hilden, Germany</p>
+<ul>
+<li>Engineered an industrial manufacturing data pipeline using Apache Airflow, AWS S3, and Amazon Redshift to extract and standardize time-series telemetry and Golden Batch reference data across 1,000+ production campaigns and multiple plant variants.</li>
+<li>Implemented automated data-quality validation checks for timestamps, duplicate records, missing values, and out-of-range sensor readings, improving analytical reproducibility across manufacturing cells.</li>
+<li>Built reproducible Python workflows (1,600+ LOC) using Pandas, statistical hypothesis testing (t-tests, effect-size analysis), and signal processing to evaluate process drift, campaign stability, and drivers of production-rate variation.</li>
+<li>Developed predictive models (Ridge regression, Gradient Boosting) using aligned lagged process variables and leave-one-campaign-out validation to identify key process associations impacting NPK product quality across unseen runs.</li>
+<li>Designed and implemented an AWS ETL pipeline using Glue, PySpark, and Redshift Spectrum, reducing data processing time by 30% for Data Lake and industrial Specific Energy Consumption (SEC) calculations.</li>
+<li>Built a serverless ML inference platform by containerizing AWS Lambda behind API Gateway, using Jinja2-parameterized CloudFormation for repeatable deployments across dev/test/prod environments.</li>
+<li>Orchestrated event-driven retraining pipelines with Lambda and SageMaker Pipelines, implementing YAML/CSV-driven multi-plant onboarding to reduce deployment latency.</li>
+<li>Enforced software engineering quality gates via CI/CD with Dockerized pytest suites and Trivy container security scanning, while optimizing ECS/CloudFormation infrastructure to cut cloud costs by 20%.</li>
+<li>Collaborated cross-functionally with process engineers and data scientists to deliver interactive Power BI and Amazon QuickSight dashboards translating unified plant telemetry into operational insights.</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item right">
+<div class="timeline-content">
+<h3>Intern - Data Scientist</h3>
+<p class="company">Bosch Rexroth</p>
+<p class="date">Jul 2020 - Jan 2021 | Homburg (Saar), Germany</p>
+<ul>
+<li>Developed and deployed ML models using industrial sensor data to detect heat and mass flow anomalies with 95% accuracy, supporting predictive maintenance and component health monitoring.</li>
+<li>Performed exploratory data analysis (EDA) with Plotly and Seaborn to isolate thermodynamic and operational parameters impacting system efficiency.</li>
+<li>Improved model predictive performance by 20% through systematic hyperparameter tuning with Optuna.</li>
+</ul>
+</div>
+</div>
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>Data Analyst - Last Mile Delivery</h3>
+<p class="company">Amazon Development Centre</p>
+<p class="date">Sep 2016 - Jun 2017 | Hyderabad, India</p>
+<ul>
+<li>Optimized last-mile logistics operations for Amazon North America through data analysis, improving delivery efficiency by 15%.</li>
+<li>Supported validation and field testing of a new delivery routing solution that achieved a 98% operational success rate.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        <section id="projects" class="section">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>Master Thesis - Defect Detection in Rail-Guided Vehicles</h3>
-                            <p>Detected 8 mechanical defects with 90% accuracy using sensor data. Deployed via FastAPI/Streamlit and tracked experiments with MLflow.</p>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>Intelligent Drive Mode Selection in Hybrid Powertrains</h3>
-                            <p>Optimized hybrid vehicle controllers using ML to predict drive modes based on telemetry, maximizing fuel efficiency.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="projects" class="section">
+<div class="container">
+<h2 class="section-title">Projects</h2>
+<div class="projects-grid">
+<div class="project-card">
+<div class="project-content">
+<h3>FleetGuard AI – Predictive Maintenance &amp; Component Health Platform</h3>
+<ul>
+<li>Built a modular predictive maintenance pipeline analyzing operational sensor telemetry and maintenance history to forecast component degradation and failure risk.</li>
+<li>Integrated SHAP explainability and statistical feature diagnostics into a Streamlit interface to surface physical degradation drivers for engineering review.</li>
+</ul>
+<div class="tags"><span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>SHAP</span><span>Streamlit</span></div>
+</div>
+</div>
+<div class="project-card">
+<div class="project-content">
+<h3>Master Thesis – Sensor-Based Defect Detection in Automated Rail-Guided Vehicles</h3>
+<ul>
+<li>Preprocessed multi-channel mechanical sensor time-series data from unmanned vehicles to classify 8 distinct mechanical defects, achieving 90% validation accuracy.</li>
+<li>Deployed the inference service with FastAPI and Streamlit, utilizing MLflow for reproducible experiment tracking and real-time model monitoring.</li>
+</ul>
+<div class="tags"><span>Python</span><span>FastAPI</span><span>MLflow</span><span>Streamlit</span></div>
+</div>
+</div>
+<div class="project-card">
+<div class="project-content">
+<h3>Intelligent Drive Mode Selection Using ML in Mild Hybrid Powertrains</h3>
+<ul>
+<li>Developed an ML controller model using physical powertrain telemetry (speed, RPM, engine load) to optimize energy efficiency across historical driving cycles.</li>
+</ul>
+<div class="tags"><span>Python</span><span>Telemetry Modeling</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        <section id="education" class="section">
-             <div class="container">
-                <h2 class="section-title">Education</h2>
-                <div class="education-grid">
-                    <div class="education-card">
-                        <h3>M.Sc. in Commercial Vehicle Technology</h3>
-                        <p>TU Kaiserslautern, Germany</p>
-                        <p>Apr 2022</p>
-                    </div>
-                    <div class="education-card">
-                        <h3>B.Tech in Mechanical Engineering</h3>
-                        <p>ICFAI Foundation for Higher Education, India</p>
-                        <p>Jul 2016</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="education" class="section">
+<div class="container">
+<h2 class="section-title">Education</h2>
+<div class="education-grid">
+<div class="education-card">
+<h3>M.Sc. in Commercial Vehicle Technology</h3>
+<p>RPTU Kaiserslautern (TU Kaiserslautern), Germany</p>
+<p>Apr 2022</p>
+</div>
+<div class="education-card">
+<h3>B.Tech in Mechanical Engineering</h3>
+<p>ICFAI Foundation for Higher Education, Hyderabad, India</p>
+<p>Jul 2016</p>
+</div>
+</div>
+</div>
+</section>
 
-        <section id="certifications" class="section">
-            <div class="container">
-                <h2 class="section-title">Professional Development</h2>
-                <div class="certifications-list">
-                    <div class="cert-item"><i class="fab fa-aws"></i> AWS Certified AI Practitioner</div>
-                    <div class="cert-item"><i class="fas fa-wind"></i> Apache Airflow 3 Fundamentals</div>
-                    <div class="cert-item"><i class="fas fa-database"></i> dbt Fundamentals</div>
-                    <div class="cert-item"><i class="fab fa-google"></i> Google Data Analytics</div>
-                    <div class="cert-item"><i class="fab fa-microsoft"></i> Azure Data Fundamentals</div>
-                </div>
-            </div>
-        </section>
-    </main>
+<section id="certifications" class="section">
+<div class="container">
+<h2 class="section-title">Professional Development</h2>
+<div class="certifications-list">
+<div class="cert-item"><i class="fab fa-aws"></i><div>AWS Certified AI Practitioner<small>Amazon Web Services (AWS)</small></div></div>
+<div class="cert-item"><i class="fas fa-wind"></i><div>Apache Airflow 3 Fundamentals<small>Astronomer</small></div></div>
+<div class="cert-item"><i class="fas fa-database"></i><div>dbt Fundamentals<small>dbt Labs</small></div></div>
+<div class="cert-item"><i class="fab fa-google"></i><div>Google Data Analytics – Professional Certificate<small>Google (Coursera)</small></div></div>
+<div class="cert-item"><i class="fab fa-microsoft"></i><div>Microsoft Azure Data Fundamentals<small>Microsoft (Coursera)</small></div></div>
+</div>
+</div>
+</section>
+</main>
 
-    <footer>
-        <p>&copy; 2025 Sashank Prayaga | Data Engineer Portfolio</p>
-    </footer>
+<footer>
+<p>&copy; 2026 Sashank Prayaga | Data Engineer Portfolio</p>
+</footer>
 
 </body>
 </html>
